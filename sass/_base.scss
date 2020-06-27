@@ -42,13 +42,13 @@ body{
 .container{
     display: grid;
     // grid-template-rows: row-1  row-2 row-3  rows4-6;
-    grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
+    grid-template-rows:80vh min-content 40vw repeat(3, min-content);
     // grid-template-columns: sidebar space-column 8columns-data space-column;
     grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] minmax(60px, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end] )[center-end] minmax(60px, 1fr) [full-end];
 
     & > *{
         font-size: 3rem;
-        padding: 3rem;
+        // padding: 3rem;
     }
 
 }
