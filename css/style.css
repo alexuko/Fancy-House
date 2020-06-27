@@ -20,7 +20,8 @@ body {
   grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
   grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] minmax(60px, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(60px, 1fr) [full-end]; }
   .container > * {
-    font-size: 3rem; }
+    font-size: 3rem;
+    padding: 3rem; }
 
 .heading-1, .heading-2, .heading-3, .heading-4 {
   font-family: "Josefin Sans", sans-serif;
@@ -149,8 +150,62 @@ body {
   margin-bottom: 4rem; }
 
 .homes {
-  background-color: #101d2c;
-  grid-column: center-start / center-end; }
+  grid-column: center-start / center-end;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  gap: 7rem; }
+
+.home {
+  background-color: #f9f7f6;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 2rem;
+  box-shadow: -0.5rem 0.5rem 0.6rem rgba(134, 134, 134, 0.2);
+  padding: 1rem; }
+  .home__img {
+    width: 100%;
+    grid-column: 1/-1;
+    grid-row: 1/2;
+    z-index: 1; }
+  .home__like {
+    grid-row: 1/2;
+    grid-column: 2/3;
+    fill: #c69963;
+    height: 2rem;
+    width: 2rem;
+    z-index: 2;
+    margin: 1.2rem;
+    cursor: pointer;
+    justify-self: right; }
+  .home__name {
+    grid-column: 1/-1;
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 1.6rem;
+    text-align: center;
+    padding: 1.25rem;
+    background-color: #101d2c;
+    font-weight: 400;
+    color: #fff;
+    width: 80%;
+    grid-row: 1/2;
+    justify-self: center;
+    align-self: end;
+    z-index: 2;
+    transform: translateY(50%); }
+  .home__btn {
+    grid-column: 1/-1; }
+  .home__location, .home__rooms {
+    margin-top: 2rem; }
+  .home__location, .home__rooms, .home__area, .home__price {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    margin-left: 2rem; }
+    .home__location svg, .home__rooms svg, .home__area svg, .home__price svg {
+      fill: #c69963;
+      height: 2rem;
+      width: 2rem;
+      margin-right: 1.2rem; }
 
 .gallery {
   background-color: #54483A;
