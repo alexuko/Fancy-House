@@ -8,6 +8,10 @@
     justify-content: center;
     row-gap: 2rem;
     justify-items: center;
+
+    @media only screen and (max-width: $bp-medium) {// at 800px width 
+        grid-column: 1/-1;        
+    }
     
     &__list{     
         display: grid;
@@ -15,6 +19,16 @@
         column-gap: 2rem;
         row-gap: 5vh;
         align-items: center;
+        
+        @media only screen and (max-width: $bp-medium) {// at 800px width 
+            grid-template-columns: repeat(3, min-content max-content) ;
+        }
+        
+        @media only screen and (max-width: $bp-small) {// at 600px width 
+            grid-template-columns: min-content max-content;
+            
+        }
+        
     }
 
     &__img{     

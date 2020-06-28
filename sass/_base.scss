@@ -14,11 +14,25 @@ $color-grey-dark-2: #6D5D4B;
 $font-primary: 'Nunito', sans-serif;
 $font-display: 'Josefin Sans', sans-serif;
 
+// MEDIA QUERIES BREAK POINTS
+$bp-largest: 75em; //1200/16px = 75
+$bp-large: 62.5em; //1000/16px = 62.5
+$bp-medium: 50em; //800/16px = 50
+$bp-small: 37.5em; //600/16px = 50
+
+
+
 ////////////////////////////////////
 ///// BASIC SET-UP
 html{
     box-sizing: border-box;
     font-size: 62.5%; //10px/16px = 62.5% -> 1rem = 10px
+
+    @media only screen and (max-width: $bp-largest) {
+        font-size: 50%;
+        
+    }
+    
 }
 
 *,
@@ -46,9 +60,20 @@ body{
     // grid-template-columns: sidebar space-column 8columns-data space-column;
     grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] minmax(60px, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end] )[center-end] minmax(60px, 1fr) [full-end];
 
-    & > *{
-        font-size: 3rem;
-        padding: 3rem;
+
+    @media only screen and (max-width: $bp-large) {// at 1000px width 
+        //THIS IS TO ADJUST THE NAVBAR TO THE TOP INSTEAD TO THE LEFT
+        grid-template-rows: 7rem 80vh min-content 40vw repeat(3, min-content);
+        grid-template-columns: [full-start] minmax(60px, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end] )[center-end] minmax(60px, 1fr) [full-end];
+        
+        
     }
+   
+    @media only screen and (max-width: $bp-medium) {// at 800px width 
+        grid-template-rows: 7rem calc(80vh - 7rem);// we will only define the first 2 rows, as the rest will be defined automatically by the grid 
+        
+    }
+
+    
 
 }

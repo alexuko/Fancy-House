@@ -3,17 +3,29 @@
     // background 
     background-color: $color-grey-dark-1;
     background-image: linear-gradient(rgba($color-secondary, .9), rgba($color-secondary, .7)),
-                      url(../img/hero.jpeg);
+    url(../img/hero.jpeg);
     background-size: cover;
     background-position: bottom;
     
     // layout 
     display: grid;
-    grid-template-rows: 1fr min-content 6rem 1fr;
-    grid-template-columns: max-content;//max-content is like inline
+    // grid-template-rows: 1fr min-content 6rem 1fr;
+    grid-template-rows: 1fr min-content minmax(6rem, min-content) 6rem 1fr;
+    // grid-template-columns: max-content;//max-content is like inline
+    grid-template-columns: minmax(min-content, max-content);//no images will scale good 
     gap: 1.5rem;
     justify-content: center;
+    padding: 8rem;
     padding-top: 4rem;
+
+
+    @media only screen and (max-width: $bp-medium) {// at 800px width 
+        grid-column: 1/-1;        
+    }
+
+    @media only screen and (max-width: $bp-small) {
+        padding: 5rem;                
+    }
     
     
     &__btn{
@@ -50,10 +62,12 @@
         grid-template-columns: repeat(4, 1fr);
         column-gap: 3rem;
         justify-content: center;
+        align-items: center;
 
         
         img{
-            height: 2.5rem;
+            max-height: 2.5rem;// so it scales
+            max-width: 100%;
             filter: brightness(60%);
 
         }

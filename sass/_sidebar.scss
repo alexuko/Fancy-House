@@ -5,17 +5,34 @@
 
     display: flex;
     justify-content: center;
+    padding: 1.5rem;
+
+    @media only screen and (max-width: $bp-large) {
+        grid-column: 1/-1;
+        grid-row: 1/2;
+        justify-content: flex-end;
+        align-items: center;
+        // position: fixed;
+
+    }
 }
 
 .nav-btn{
     border: none;
     border-radius: 0;
     position: fixed;
-
+    
     background-color: #ffff;
-    height: .3rem;
-    width: 4.5rem;
+    height: .2rem;
+    width: 4.2rem;
+    margin-top: 4rem;
     cursor: pointer;
+    @media only screen and (max-width: $bp-large) {
+        margin: 1rem;
+        position: relative;
+        &::before{transform: translateY(-1rem);}
+        &::after{transform: translateY(.8rem);}
+    }
     
 
     
@@ -27,18 +44,14 @@
 
         background-color: #ffff;
         height: .3rem;
-        width: 4.5rem;
+        width: inherit;
 
         transition: all .3s;
     }
 
-    &::before{
-        transform: translateY(-1.2rem);
-    }
+    &::before{transform: translateY(-1.2rem);}
 
-    &::after{
-        transform: translateY(1rem);
-    }
+    &::after{transform: translateY(1rem);}
 
     &:hover{
 

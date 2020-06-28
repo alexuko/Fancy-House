@@ -10,6 +10,11 @@
     gap: 3rem;
     align-items: start;
 
+
+    @media only screen and (max-width: $bp-small) {// at 600px width 
+            margin: 5rem 0;
+    }
+
     
 }
 
